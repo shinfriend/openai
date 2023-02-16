@@ -1,69 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>OpenAI Sample</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-        /* Set black background color, white text and some padding */
-      footer {
-      background-color: #555;
-      color: white;
-      padding: 10px;
-    }
-  </style>
-  <link
-    rel="shortcut icon"
-    href="{{ url_for('static', filename='consulting-logo.jpeg') }}"
-  />
-  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
-</head>
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>United.AI</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link  href="/static/assets/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-<body>
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-sm-6">    
-      <h3>Generate Contents</h3>
-      <form action="/" method="post">
-      <img src="{{ url_for('static', filename='openai-avatar.png') }}" width="200" height="200" />
-      <input type="text" name="topics" placeholder="Enter any keywords" required />
-      <input type="submit" value="Generate Contents" />
-      </div>  
-      <div class="col-sm-4">
-        <a href="{{ final_array[3] }}"" download>
-          <img src="/static/powerpoint_download.png" alt="Download PowerPoint Here" width="100" height="100">
-          <p>Download Powerpoint Here</p>
-        </a>
+      h2 {
+       color: #00ff00;
+      }
+      h4 {
+       color: #00ff00;
+      }
+      .btn-primary{
+         background-color: #00ff00 !important;
+         color: #030303;
+      }
+
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .mybackground {
+         background-color: rgb(255, 255, 255);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+
+
+
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/static/blog.css" rel="stylesheet">
+    
+    <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='consulting-logo.jpeg') }}"/>
+  
+    <script type="text/javascript">
+      var timerStart = Date.now();
+  </script>
+
+  </head>
+  <body>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+          console.log("Time until DOMready: ", Date.now()-timerStart);
+      });
+      $(window).load(function() {
+          console.log("Time until everything loaded: ", Date.now()-timerStart);
+      });
+ </script>   
+    
+<div class="container">
+
+
+  <form name="myForm" action="/" method="post">
+  <header class="blog-header lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="#"></a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#"></a>
+
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        
+      </div>
+    </div>
+  </header>
+
+</div>
+
+<main class="container bg-black">  
+
+  <div class="row p-1 p-md-4 mb-1 ">
+     <div class="col-md-9 px-0">
+      <h2 class="display-3 fst-italic">AI generated market analysis</h2>
+     </div>
+     <div class="col-md-3 d-flex align-items-center justify-content-end">
+      <img src="/static/united-logo.png" class="socialImg marginSocial" width="200" height="200" align="top"/>
+     </div>
+
+
+  </div>
+
+
+  <div class="row mb-2">
+    <div class="col-md-6 ">
+     <div class="row g-0 overflow-hidden flex-md-row shadow-sm h-md-450 position-relative">
+      <label><h4>Select Analysis Type</h4></label>
+      <label style="color:crimson"></label> <span style="color:rgb(252, 249, 249)" id="error-message"></span>
+      <div>
+        <input type="checkbox" value="1" name="pestel" checked>
+        <input type="hidden" value="0" name="pestel">
+        <label><h4 class="p-2 mb-6">PESTEL</h4></label>
+        <input type="checkbox" value="2" name="swot">
+        <input type="hidden" value="0" name="swot">
+        <label><h4 class="p-2 mb-6">SWOT</h4></label>
+      </div>
+
+     </div>
+
+      <div class="row g-0 overflow-hidden flex-md-row mb-4 shadow-sm h-md-450 position-relative">
+        
+        <div class="col p-4 d-flex flex-column position-static">
+          <h4 class="mb-2">Enter industry under consideration</h4>
+          <div class="input-group mb-4">
+          
+          <input type="text" name="industry" class="form-control" aria-label="Sizing example input" placeholder="insert Industry" aria-describedby="inputGroup-sizing-default" required>
+          </div>
+
+          <h4 class="mb-2">Enter market under consideration</h4>
+          <div class="input-group mb-4">
+
+          <input type="text" name="market" class="form-control" aria-label="Sizing example input" placeholder="insert market" aria-describedby="inputGroup-sizing-default" required>
+  
+          </div>
+          <button type="submit" id="updateBtn" class="btn btn-primary btn-lg">Generate content</button>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-100 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <div>
+          <img src="/static/ppt-logo.png"  class="socialImg marginSocial" width="75" height="75" />
+          <a href="{{ final_array[0] }}" download class="stretched-link"><h4>Download PowerPoint Document
+          </h4></a>
+          </div>
+        </div>
+     </div>
+
+     <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-100 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <div>
+        <img src="/static/word-logo.png"  class="socialImg marginSocial" width="75" height="75" />
+        <a href="{{ final_array[1] }}" download class="stretched-link"><h4>Download Word Document
+        </h4></a>
+        </div>
       </div>
    </div>
-  </div>
-  {% if final_array %}  
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h3>Image</h3>
-        <img src={{final_array[2]}}>
-      </div>
 
-      <div class="col-sm-6">
-        <h3> {{ final_array[0] }}</h3>        
-        {{ final_array[1] }}
-      </div>
-     
-    </div>
-  </div>
-  <br>
-  </div>
-  <div class="container">
-  
-  </div>
-  {% endif %}
+
+   </div>
+
+<div class="row p-1 p-md-4 mb-1 ">
+
+</div>
 </form>
-</body>
-<footer class="container-fluid">
-  <p>OpenAI Sample for Demo</p>
+</main>
+
+<footer class="blog-footer">
+  <p> Developed  by  <a href="https://www.thefutureisunited.com/">The Future is United</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
 </footer>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('#updateBtn').click(function() {
+          checked = $("input[type=checkbox]:checked").length;
+          if(!checked) {
+            document.getElementById('error-message').innerHTML = " You must select at lease one checkbox"
+            return false;
+          }else{
+            document.getElementById('error-message').innerHTML = " "
+            return true;
+          }
+    
+     });
+
+
+          
+  });
+    
+    </script>
+
+
+    
+  </body>
 </html>
